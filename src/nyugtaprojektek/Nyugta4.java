@@ -23,40 +23,16 @@ public class Nyugta4 {
         lablec();
     }
 
-    private static void lablec() {
-        System.out.println("        CÉG");
-        vonal('*', 20, true);
-    }
-
-    private static void datumEsNevKiirasa() {
-        System.out.println("");
-        vonal('_', 7, false);
-        vonal(' ', 6, false);
-        vonal('_',7, true);
-        System.out.print(" Dátum");
-        vonal(' ', 6, false);
-        System.out.println("   Név");
-    }
-
-    private static int osszesFogyasztas() {
-        //összegzés tétele:
-        int osszesen = 0;
-        for (int i = 0; i < tetelDb; i++) {
-            osszesen += tetelek[i];
-        }
-        return osszesen;
-    }
-
-    private static void tetelekKiirasa() {
-        for (int i = 0; i < tetelDb; i++) {
-            System.out.printf("%10s: %5d %s\n", "Tétel 1", tetelek[i], HUF);
-        }
-    }
-
     private static void fejlec() {
         vonal('*', 20, true);
         System.out.printf("%14s\n", "Nyugta 4");
         vonal('*', 20, true);
+    }
+    
+    private static void tetelekKiirasa() {
+        for (int i = 0; i < tetelDb; i++) {
+            System.out.printf("%10s: %5d %s\n", "Tétel 1", tetelek[i], HUF);
+        }
     }
 
     private static void vonal(char jel, int hossz, boolean sortores) {
@@ -67,21 +43,29 @@ public class Nyugta4 {
             //vonal += "*";
             vonal += jel;
         }
-        
-        //System.out.println(vonal);
+
         System.out.print(vonal);
         
         if(sortores){
             System.out.println("");
         }
     }
-
+    
+     private static void erteketKiir(String szoveg, int osszesen) {
+        System.out.printf("%10s: %5d %s\n", szoveg, osszesen, HUF);
+    }
+     
+    private static int osszesFogyasztas() {
+        //összegzés tétele:
+        int osszesen = 0;
+        for (int i = 0; i < tetelDb; i++) {
+            osszesen += tetelek[i];
+        }
+        return osszesen;
+    }
+    
     private static int szervizDijErteke(int szervizDijMertek) {
         return osszesFogyasztas() / szervizDijMertek;
-    }
-
-    private static void erteketKiir(String szoveg, int osszesen) {
-        System.out.printf("%10s: %5d %s\n", szoveg, osszesen, HUF);
     }
 
     private static void szervizDijatKiir(int szervizDijMertek) {
@@ -94,5 +78,20 @@ public class Nyugta4 {
         double euro = fizetendo / 350.0;
         final String eur = "\u20ac";
         System.out.printf("%10s%7.2f %s\n","", euro, eur);//
+    }
+    
+    private static void datumEsNevKiirasa() {
+        System.out.println("");
+        vonal('_', 7, false);
+        vonal(' ', 6, false);
+        vonal('_',7, true);
+        System.out.print(" Dátum");
+        vonal(' ', 6, false);
+        System.out.println("   Név");
+    }
+    
+    private static void lablec() {
+        System.out.println("        CÉG");
+        vonal('*', 20, true);
     }
 }
