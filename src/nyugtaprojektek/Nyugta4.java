@@ -14,7 +14,12 @@ public class Nyugta4 {
         vonal('-', 20, true);
         szervizDijatKiir(10);
         vonal('=', 20, true);
+        /* todo: szervízdíj metódusok refaktorizálása
+        szervizDijErteke és szervizDijatKiir metódusok
+        */
         int fizetendo = osszesFogyasztas() + szervizDijErteke(10);
+        
+        //todo: erteketKiir és eurobanKiir lehetne egységes?
         erteketKiir("Fizetendő", fizetendo);
         eurobanKiir(fizetendo);
         vonal('-', 20, true);
