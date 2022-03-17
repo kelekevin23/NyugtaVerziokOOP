@@ -2,9 +2,9 @@ package nyugtaprojektek;
 public class Nyugta4 {
 
     public static void main(String[] args) {
-        csillagok();
+        vonal('*');
         System.out.printf("%14s\n", "Nyugta 4");
-        csillagok();
+        vonal('*');
         
         final String HUF = "Ft";
         int tetelek[] = {350, 90, 1320};
@@ -13,9 +13,8 @@ public class Nyugta4 {
             System.out.printf("%10s: %5d %s\n", "Tétel 1", tetelek[i], HUF);
         }
 
-        //String duplaVonal = "====================";
-        //System.out.println(duplaVonal);
-        duplaVonal();
+        //duplaVonal();
+        vonal('=');
         
         //összegzés tétele:
         int osszesen = 0;
@@ -32,8 +31,8 @@ public class Nyugta4 {
         System.out.printf("%10s: %5d %s\n", "Szervízdíj", szervizDij, HUF);
         System.out.printf("(%d%%)\n", szervizDijMertek);
         
-        //System.out.println(duplaVonal);
-        duplaVonal();
+        //duplaVonal();
+        vonal('=');
 
         int fizetendo = osszesen + szervizDij;
         System.out.printf("%10s:  %d %s\n", "Fizetendő", fizetendo, HUF);
@@ -54,31 +53,33 @@ public class Nyugta4 {
         System.out.print(rovidVonalValaszto);
         System.out.println("   Név");
   
-        csillagok();
+        vonal('*');
         System.out.println("        CÉG");
-        csillagok();
+        vonal('*');
     }
 
-    private static void csillagok() {
-        String csillagok = "";
-        
-        //összegzés tétele:
-        for (int i = 0; i < 20; i++) {
-            csillagok += "*";
-        }
-        
-        System.out.println(csillagok);
-    }
-
-    private static void duplaVonal() {
+    //private static void csillagok() {
+    private static void vonal(char jel) {
         String vonal = "";
         
         //összegzés tétele:
         for (int i = 0; i < 20; i++) {
-            vonal += "=";
+            //vonal += "*";
+            vonal += jel;
         }
         
         System.out.println(vonal);
     }
+
+//    private static void duplaVonal() {
+//        String vonal = "";
+//        
+//        //összegzés tétele:
+//        for (int i = 0; i < 20; i++) {
+//            vonal += "=";
+//        }
+//        
+//        System.out.println(vonal);
+//    }
 
 }
