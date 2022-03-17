@@ -40,17 +40,14 @@ public class Nyugta4 {
         
         System.out.printf("%10s%7.2f %s\n","", euro, eur);//
         
-        //System.out.println(szaggatottVonal);
         vonal('-');
         
         System.out.println("");
-        //String rovidVonal = "_______";
-        //System.out.print(rovidVonal);
         rovidVonal();
         String rovidVonalValaszto = "      ";
         System.out.print(rovidVonalValaszto);
-        //System.out.println(rovidVonal);
         rovidVonal();
+        System.out.println("");
         System.out.print(" Dátum");
         System.out.print(rovidVonalValaszto);
         System.out.println("   Név");
@@ -76,7 +73,7 @@ public class Nyugta4 {
         String vonal = "";
         
         //összegzés tétele:
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 7; i++) {
             //vonal += "*";
             vonal += '_';
         }
