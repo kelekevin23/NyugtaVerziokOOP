@@ -2,11 +2,8 @@ package nyugtaprojektek;
 public class Nyugta4 {
 
     public static void main(String[] args) {
-        //String csillagok = "********************";
-        //System.out.println(csillagok);
         csillagok();
         System.out.printf("%14s\n", "Nyugta 4");
-        //System.out.println(csillagok);
         csillagok();
         
         final String HUF = "Ft";
@@ -16,8 +13,9 @@ public class Nyugta4 {
             System.out.printf("%10s: %5d %s\n", "Tétel 1", tetelek[i], HUF);
         }
 
-        String duplaVonal = "====================";
-        System.out.println(duplaVonal);
+        //String duplaVonal = "====================";
+        //System.out.println(duplaVonal);
+        duplaVonal();
         
         //összegzés tétele:
         int osszesen = 0;
@@ -34,7 +32,8 @@ public class Nyugta4 {
         System.out.printf("%10s: %5d %s\n", "Szervízdíj", szervizDij, HUF);
         System.out.printf("(%d%%)\n", szervizDijMertek);
         
-        System.out.println(duplaVonal);
+        //System.out.println(duplaVonal);
+        duplaVonal();
 
         int fizetendo = osszesen + szervizDij;
         System.out.printf("%10s:  %d %s\n", "Fizetendő", fizetendo, HUF);
@@ -54,11 +53,9 @@ public class Nyugta4 {
         System.out.print(" Dátum");
         System.out.print(rovidVonalValaszto);
         System.out.println("   Név");
-        
-        //System.out.println(csillagok);    
+  
         csillagok();
         System.out.println("        CÉG");
-        //System.out.println(csillagok);
         csillagok();
     }
 
@@ -71,6 +68,17 @@ public class Nyugta4 {
         }
         
         System.out.println(csillagok);
+    }
+
+    private static void duplaVonal() {
+        String vonal = "";
+        
+        //összegzés tétele:
+        for (int i = 0; i < 20; i++) {
+            vonal += "=";
+        }
+        
+        System.out.println(vonal);
     }
 
 }
