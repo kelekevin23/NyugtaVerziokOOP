@@ -2,9 +2,7 @@ package nyugtaprojektek;
 public class Nyugta4 {
 
     public static void main(String[] args) {
-        vonal('*', 20, true);
-        System.out.printf("%14s\n", "Nyugta 4");
-        vonal('*', 20, true);
+        fejlec();
         
         final String HUF = "Ft";
         int tetelek[] = {350, 90, 1320};
@@ -41,20 +39,21 @@ public class Nyugta4 {
         vonal('-', 20, true);
         
         System.out.println("");
-
         vonal('_', 7, false);
-        //String rovidVonalValaszto = "      ";
-        //System.out.print(rovidVonalValaszto);
         vonal(' ', 6, false);
         vonal('_',7, true);
-        //System.out.println("");
         System.out.print(" Dátum");
-        //System.out.print(rovidVonalValaszto);
         vonal(' ', 6, false);
         System.out.println("   Név");
   
         vonal('*', 20, true);
         System.out.println("        CÉG");
+        vonal('*', 20, true);
+    }
+
+    private static void fejlec() {
+        vonal('*', 20, true);
+        System.out.printf("%14s\n", "Nyugta 4");
         vonal('*', 20, true);
     }
 
