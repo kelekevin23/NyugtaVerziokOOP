@@ -13,19 +13,23 @@ public class Nyugta4 {
         vonal('=', 20, true);
         
         int osszesen = osszesFogyasztas();
-        System.out.printf("%10s: %5d %s\n", "Összesen", osszesen, HUF);
+        //System.out.printf("%10s: %5d %s\n", "Összesen", osszesen, HUF);
+        erteketKiir("Összesen", osszesFogyasztas());
         
         vonal('-', 20, true);
         
         int szervizDijMertek = 10;
         int szervizDij = szervizDijErteke(szervizDijMertek);
-        System.out.printf("%10s: %5d %s\n", "Szervízdíj", szervizDij, HUF);
+        //System.out.printf("%10s: %5d %s\n", "Szervízdíj", szervizDij, HUF);
+        erteketKiir("Szervízdíj", szervizDijErteke(szervizDijMertek));
         System.out.printf("(%d%%)\n", szervizDijMertek);
         
         vonal('=', 20, true);
 
         int fizetendo = osszesen + szervizDij;
-        System.out.printf("%10s:  %d %s\n", "Fizetendő", fizetendo, HUF);
+        //System.out.printf("%10s:  %d %s\n", "Fizetendő", fizetendo, HUF);
+        erteketKiir("Fizetendő", fizetendo);
+        
         double euro = fizetendo / 350.0;
         final String eur = "\u20ac";
         
@@ -95,5 +99,9 @@ public class Nyugta4 {
 
     private static int szervizDijErteke(int szervizDijMertek) {
         return osszesFogyasztas() / szervizDijMertek;
+    }
+
+    private static void erteketKiir(String szoveg, int osszesen) {
+        System.out.printf("%10s: %5d %s\n", szoveg, osszesen, HUF);
     }
 }
