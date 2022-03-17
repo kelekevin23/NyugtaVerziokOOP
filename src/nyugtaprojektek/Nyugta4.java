@@ -8,39 +8,18 @@ public class Nyugta4 {
     
     public static void main(String[] args) {
         fejlec();
-        tetelekKiirasa();
-        
+        tetelekKiirasa();        
         vonal('=', 20, true);
-        
-        int osszesen = osszesFogyasztas();
-        //System.out.printf("%10s: %5d %s\n", "Összesen", osszesen, HUF);
         erteketKiir("Összesen", osszesFogyasztas());
-        
         vonal('-', 20, true);
-        
-        int szervizDijMertek = 10;
-        int szervizDij = szervizDijErteke(szervizDijMertek);
-        //System.out.printf("%10s: %5d %s\n", "Szervízdíj", szervizDij, HUF);
-        erteketKiir("Szervízdíj", szervizDijErteke(szervizDijMertek));
-        System.out.printf("(%d%%)\n", szervizDijMertek);
-        
+        szervizDijatKiir(10);
         vonal('=', 20, true);
-
-        int fizetendo = osszesen + szervizDij;
-        //System.out.printf("%10s:  %d %s\n", "Fizetendő", fizetendo, HUF);
+        int fizetendo = osszesFogyasztas() + szervizDijErteke(10);
         erteketKiir("Fizetendő", fizetendo);
-        
-        double euro = fizetendo / 350.0;
-        final String eur = "\u20ac";
-        
-        System.out.printf("%10s%7.2f %s\n","", euro, eur);//
-        
+        eurobanKiir(fizetendo);
         vonal('-', 20, true);
-        
         datumEsNevKiirasa();
-  
         vonal('*', 20, true);
-        
         lablec();
     }
 
@@ -103,5 +82,17 @@ public class Nyugta4 {
 
     private static void erteketKiir(String szoveg, int osszesen) {
         System.out.printf("%10s: %5d %s\n", szoveg, osszesen, HUF);
+    }
+
+    private static void szervizDijatKiir(int szervizDijMertek) {
+        int szervizDij = szervizDijErteke(szervizDijMertek);
+        erteketKiir("Szervízdíj", szervizDijErteke(szervizDijMertek));
+        System.out.printf("(%d%%)\n", szervizDijMertek);
+    }
+
+    private static void eurobanKiir(int fizetendo) {
+        double euro = fizetendo / 350.0;
+        final String eur = "\u20ac";
+        System.out.printf("%10s%7.2f %s\n","", euro, eur);//
     }
 }
