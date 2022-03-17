@@ -9,19 +9,16 @@ public class Nyugta4 {
     public static void main(String[] args) {
         fejlec();
         tetelekKiirasa();
+        
         vonal('=', 20, true);
         
-        //összegzés tétele:
-        int osszesen = 0;
-        for (int i = 0; i < tetelDb; i++) {
-            osszesen += tetelek[i];
-        }
+        int osszesen = osszesFogyasztas();
         System.out.printf("%10s: %5d %s\n", "Összesen", osszesen, HUF);
-       
+        
         vonal('-', 20, true);
         
         int szervizDijMertek = 10;
-        int szervizDij = osszesen / szervizDijMertek;
+        int szervizDij = szervizDijErteke(szervizDijMertek);
         System.out.printf("%10s: %5d %s\n", "Szervízdíj", szervizDij, HUF);
         System.out.printf("(%d%%)\n", szervizDijMertek);
         
@@ -36,6 +33,19 @@ public class Nyugta4 {
         
         vonal('-', 20, true);
         
+        datumEsNevKiirasa();
+  
+        vonal('*', 20, true);
+        
+        lablec();
+    }
+
+    private static void lablec() {
+        System.out.println("        CÉG");
+        vonal('*', 20, true);
+    }
+
+    private static void datumEsNevKiirasa() {
         System.out.println("");
         vonal('_', 7, false);
         vonal(' ', 6, false);
@@ -43,10 +53,15 @@ public class Nyugta4 {
         System.out.print(" Dátum");
         vonal(' ', 6, false);
         System.out.println("   Név");
-  
-        vonal('*', 20, true);
-        System.out.println("        CÉG");
-        vonal('*', 20, true);
+    }
+
+    private static int osszesFogyasztas() {
+        //összegzés tétele:
+        int osszesen = 0;
+        for (int i = 0; i < tetelDb; i++) {
+            osszesen += tetelek[i];
+        }
+        return osszesen;
     }
 
     private static void tetelekKiirasa() {
@@ -76,5 +91,9 @@ public class Nyugta4 {
         if(sortores){
             System.out.println("");
         }
+    }
+
+    private static int szervizDijErteke(int szervizDijMertek) {
+        return osszesFogyasztas() / szervizDijMertek;
     }
 }
