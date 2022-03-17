@@ -1,16 +1,14 @@
 package nyugtaprojektek;
 public class Nyugta4 {
 
+    //több metódusnak is látnia kell:
+    static final String HUF = "Ft";
+    static int tetelek[] = {350, 90, 1320};
+    static int tetelDb = tetelek.length;
+    
     public static void main(String[] args) {
         fejlec();
-        
-        final String HUF = "Ft";
-        int tetelek[] = {350, 90, 1320};
-        int tetelDb = tetelek.length;
-        for (int i = 0; i < tetelDb; i++) {
-            System.out.printf("%10s: %5d %s\n", "Tétel 1", tetelek[i], HUF);
-        }
-
+        tetelekKiirasa();
         vonal('=', 20, true);
         
         //összegzés tétele:
@@ -49,6 +47,12 @@ public class Nyugta4 {
         vonal('*', 20, true);
         System.out.println("        CÉG");
         vonal('*', 20, true);
+    }
+
+    private static void tetelekKiirasa() {
+        for (int i = 0; i < tetelDb; i++) {
+            System.out.printf("%10s: %5d %s\n", "Tétel 1", tetelek[i], HUF);
+        }
     }
 
     private static void fejlec() {
