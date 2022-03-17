@@ -44,11 +44,13 @@ public class Nyugta4 {
         vonal('-');
         
         System.out.println("");
-        String rovidVonal = "_______";
-        System.out.print(rovidVonal);
+        //String rovidVonal = "_______";
+        //System.out.print(rovidVonal);
+        rovidVonal();
         String rovidVonalValaszto = "      ";
         System.out.print(rovidVonalValaszto);
-        System.out.println(rovidVonal);
+        //System.out.println(rovidVonal);
+        rovidVonal();
         System.out.print(" Dátum");
         System.out.print(rovidVonalValaszto);
         System.out.println("   Név");
@@ -68,5 +70,17 @@ public class Nyugta4 {
         }
         
         System.out.println(vonal);
+    }
+
+    private static void rovidVonal() {
+        String vonal = "";
+        
+        //összegzés tétele:
+        for (int i = 0; i < 10; i++) {
+            //vonal += "*";
+            vonal += '_';
+        }
+        
+        System.out.print(vonal);
     }
 }
