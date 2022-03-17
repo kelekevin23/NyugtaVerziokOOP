@@ -43,12 +43,14 @@ public class Nyugta4 {
         System.out.println("");
 
         vonal('_', 7, false);
-        String rovidVonalValaszto = "      ";
-        System.out.print(rovidVonalValaszto);
+        //String rovidVonalValaszto = "      ";
+        //System.out.print(rovidVonalValaszto);
+        vonal(' ', 6, false);
         vonal('_',7, true);
         //System.out.println("");
         System.out.print(" Dátum");
-        System.out.print(rovidVonalValaszto);
+        //System.out.print(rovidVonalValaszto);
+        vonal(' ', 6, false);
         System.out.println("   Név");
   
         vonal('*', 20, true);
