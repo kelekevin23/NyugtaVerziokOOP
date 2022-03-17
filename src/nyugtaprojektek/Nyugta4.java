@@ -13,7 +13,6 @@ public class Nyugta4 {
             System.out.printf("%10s: %5d %s\n", "Tétel 1", tetelek[i], HUF);
         }
 
-        //duplaVonal();
         vonal('=');
         
         //összegzés tétele:
@@ -23,15 +22,15 @@ public class Nyugta4 {
         }
         System.out.printf("%10s: %5d %s\n", "Összesen", osszesen, HUF);
         
-        String szaggatottVonal = "--------------------";
-        System.out.println(szaggatottVonal);
+        //String szaggatottVonal = "--------------------";
+        //System.out.println(szaggatottVonal);
+        vonal('-');
         
         int szervizDijMertek = 10;
         int szervizDij = osszesen / szervizDijMertek;
         System.out.printf("%10s: %5d %s\n", "Szervízdíj", szervizDij, HUF);
         System.out.printf("(%d%%)\n", szervizDijMertek);
         
-        //duplaVonal();
         vonal('=');
 
         int fizetendo = osszesen + szervizDij;
@@ -41,7 +40,8 @@ public class Nyugta4 {
         
         System.out.printf("%10s%7.2f %s\n","", euro, eur);//
         
-        System.out.println(szaggatottVonal);
+        //System.out.println(szaggatottVonal);
+        vonal('-');
         
         System.out.println("");
         String rovidVonal = "_______";
@@ -58,7 +58,6 @@ public class Nyugta4 {
         vonal('*');
     }
 
-    //private static void csillagok() {
     private static void vonal(char jel) {
         String vonal = "";
         
@@ -70,16 +69,4 @@ public class Nyugta4 {
         
         System.out.println(vonal);
     }
-
-//    private static void duplaVonal() {
-//        String vonal = "";
-//        
-//        //összegzés tétele:
-//        for (int i = 0; i < 20; i++) {
-//            vonal += "=";
-//        }
-//        
-//        System.out.println(vonal);
-//    }
-
 }
